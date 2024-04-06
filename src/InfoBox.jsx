@@ -20,17 +20,17 @@ export default function InfoBox({info}){
         <div className="InfoBox">
            
             <div className="cardContainer" >
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }} className="card">
       <CardMedia
         sx={{ height: 140 }}
         image={info.humidity > 80 ? RAIN_URL: info.temp >15 ? HOT_URL : COLD_URL}
         title="green iguana"
       />
-      <CardContent>
+      <CardContent className="cardContext">
         <Typography gutterBottom variant="h5" component="div">
           {info.city} {info.humidity > 80 ? <ThunderstormIcon/>: info.temp > 15 ? <WbSunnyIcon/>: <AcUnitIcon/>}
         </Typography>
-        <Typography variant="body2" color="text.secondary"component="span">
+        <Typography variant="body2" color="text.primary"component="span" >
        <p>Tempreture = {info.temp}&deg;C</p>
        <p>Humidity = {info.humidity}</p>
        <p>Min Temp = {info.tempMin}&deg;C</p>
